@@ -1,0 +1,21 @@
+@import url(//db.onlinewebfonts.com/c/d5eef793c51ffd65df6fb6dd1ec86f1c?family=CreamyScript);
+.countdown{
+    text-align: center;
+}
+.countdown h1{
+    font-size: 10rem;
+    font-family: "CreamyScript";
+    color: #f5f1f0;
+    z-index: 0;
+    margin: 5% 0 0 0;
+}
+.countdown h2{
+    font-size: 4rem;
+    margin: -2% 0 0 0;
+}
+.countdown h3{
+    font-size: 5rem;
+    margin: 0 0 5% 0;
+    color: #e6002c;
+    font-family: "CreamyScript";
+}

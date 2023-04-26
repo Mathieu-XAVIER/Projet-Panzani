@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panzani{% endblock %}
+
+{% block body %}
+
+    {% block javascripts %}
+        <script src="{{asset('assets/js/countdown.js')}}"></script>
+        <script src="{{asset('assets/js/slider.js')}}"></script>
+    {% endblock %}
+
+    {% block stylesheets %}
+        <link href="{{ asset('assets/css/header.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('assets/css/countdown.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('assets/css/chefs.css') }}" rel="stylesheet" media="all">
+        <link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" media="all">
+    {% endblock %}
+
+    <header>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_PANZANI.png" alt="Panzani logo">
+        <nav class="nav">
+            <a class="nav-item" href="#">Accueil</a>
+            <a class="nav-item" href="https://www.panzani.fr/nos-produits">Nos Produits</a>
+            <a class="nav-item" href="#">Nos Chefs</a>
+            <a class="nav-item" href="https://www.panzani.fr/nos-recettes">Nos Recettes</a>
+        </nav>
+        <div class="search">
+            <input class="search-input" type="text" placeholder="Rechercher...">
+            <button class="search-button">Rechercher</button>
+        </div>
+        <div class="login">
+            <a href="{{ path('app_login') }}" class="login-button">Se connecter</a>
+        </div>
+    </header>
+
+
+    <div class="carousel">
+        <div class="carousel-infos">
+           <h2>Nos chefs</h2>
+            <p>Découvrez les nouveaux chefs à domocile Panzani. Des recettes originales à base de 100% d’ingrédients d’origine naturelle. Plus qu’un chef : un véritable accompagnement pour vos pâtes !</p>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-item"><img src="https://backend.panzani.fr/app/uploads/2022/05/slider-completement-bon-rouge-image2.png"></div>
+            <div class="carousel-item"><img src="https://backend.panzani.fr/app/uploads/2022/11/slider-3-minutes-vdef.png"></div>
+            <div class="carousel-item"><img src="https://backend.panzani.fr/app/uploads/2023/01/slider-legumes-du-marche-desktop.png"></div>
+        </div>
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <button class="carousel-btn next-btn">&#10095;</button>
+    </div>
+
+
+
+    <div class="countdown">
+        <h1>Nos chefs à domicile</h1>
+        <h2>Disponible dans :</h2>
+        <h3 id="countdown"></h3>
+    </div>
+
+
+    <div class="chefs">
+        {% for c in chefs %}
+            <div class="chef">
+                <img src="https://www.studyrama.com/sites/default/files/metier/2022-07/arton1008.png" alt="Photo">
+                <h2>{{c.nom }} {{ c.prenom }}</h2>
+                <ul>
+                    <li class="price">{{ c.prix }} €</li>
+                    <li><a class="btn-reserve" href="#">Réserver</a></li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="signupSection">
+        <div class="info">
+            <h2>Mission to Deep Space</h2>
+            <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+            <p>The Future Is Here</p>
+        </div>
+        <form action="{{ path('app_client_new') }}" method="POST" class="signupForm" name="signupform">
+            <h2>Sign Up</h2>
+            <ul class="noBullet">
+                <li>
+                    <label for="nom">Nom :</label>
+                    <input class="inputFields" type="text" id="nom" name="nom" required>
+                </li>
+                <li>
+                    <label for="email">E-mail :</label>
+                    <input  class="inputFields"type="email" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="tel">Téléphone :</label>
+                    <input class="inputFields" type="tel" id="tel" name="tel" pattern="[0-9]{10}" required>
+                </li>
+                <li>
+                    <label for="age">Âge :</label>
+                    <input class="inputFields" type="number" id="age" name="age" min="18" max="100" required>
+                </li>
+                <li id="center-btn">
+                    <input type="submit" id="join-btn" name="join" alt="Join" value="J'en profite">
+                </li>
+            </ul>
+        </form>
+
+    </div>
+
+{% endblock %}
