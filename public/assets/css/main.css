@@ -1,0 +1,49 @@
+@import url(//db.onlinewebfonts.com/c/d5eef793c51ffd65df6fb6dd1ec86f1c?family=CreamyScript);
+.main{
+    width: 100%;
+    height: 650px;
+}
+.main img{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.main div{
+    z-index: 3;
+    position: absolute;
+    top: 15%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.main h1{
+    font-size: 6rem;
+    font-family: "CreamyScript";
+    text-transform: uppercase;
+    margin: 50px 0 0 0;
+}
+.main h2{
+    font-size: 3rem;
+    font-family: "CreamyScript";
+    color: #e6002c;
+    margin:0;
+}
+.main p{
+    font-size: 1.2rem;
+    margin: 3% 20%;
+}
+.btn-discorver{
+    background-color: #e6002c;
+    padding: 1rem 2.5rem;
+    margin: 2% 45%;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-discorver:hover{
+    color: black;
+    transform: scale(0.9);
+}
