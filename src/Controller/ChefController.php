@@ -37,7 +37,12 @@ class ChefController extends AbstractController
             'form' => $form->createView(),
         ]);
 
-
-
+//        #[Route('/{id}', name: 'app_chef_show', methods: ['GET'])]
+//        public function show(Chef $chef): Response
+//        {
+//        return $this->render('chef/show.html.twig', [
+//            'chef' => $chef,
+//        ]);
+//    }
     }
 }

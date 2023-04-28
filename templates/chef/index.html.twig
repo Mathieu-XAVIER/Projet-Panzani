@@ -40,9 +40,6 @@
             <input class="search-input" type="text" placeholder="Rechercher...">
             <button class="search-button">Rechercher</button>
         </div>
-        <div class="login">
-            <a href="{{ path('app_login') }}" class="login-button">Se connecter</a>
-        </div>
     </header>
 
 
@@ -69,11 +66,11 @@
     <div class="chefs" id="chefs">
         {% for c in chefs %}
             <div class="chef">
-                <img src="{{ asset('assets/images/chef8.jpg') }}" alt="Photo">
+                <img src="{{ c.photo }}" alt="Photo">
                 <h2>{{c.nom }} {{ c.prenom }}</h2>
                 <ul>
                     <li class="price">{{ c.prix }} €</li>
-                    <li><a class="btn-reserve" href="#">Réserver</a></li>
+                    <li><a class="btn-reserve" href="">Réserver</a></li>
                 </ul>
             </div>
         {% endfor %}

@@ -34,6 +34,9 @@
     border: none;
     border-radius: 20px;
 }
+.chef a:hover{
+    transform: scale(0.9);
+}
 
 .price{
     background-color: #f5f1f0;
@@ -47,5 +50,8 @@
     padding: 0.5em 1.5em;
     color: white;
     margin-right: 20px;
+}
+.btn-reserve:hover{
+    color: black;
 }
 
